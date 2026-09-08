@@ -20,11 +20,14 @@ rows, STATUS.md heartbeats.
 4. Safety rays (what must never be sent/touched/printed).
 5. Output contract: artifacts to disk EARLY + final message + mandatory
    `## FRICTION REPORT` + verdict rows as `<V-NEXT>` placeholders.
-6. Reminders: immediate-broadcast duty; info-requests go through the dispatcher.
+6. PREFLIGHT DO-NOT-RETRY: before dispatching, the dispatcher greps the verdict
+   register for DO-NOT-RETRY/REFUTED rows relevant to the task and pastes them
+   INTO the brief — the register only saves lives if the agent sees the dead ends.
 7. Token budget guidance: state a ceiling per task type; read large files with
    offset/limit; never re-read what's in context (note key facts in STATUS.md).
 8. Tier rule: single-run results are BETA; claiming VERIFIED requires citing
    ≥2 independent evidence paths.
+9. Reminders: immediate-broadcast duty; info-requests go through the dispatcher.
 
 ## 3. Heartbeat & monitoring
 

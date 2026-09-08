@@ -48,11 +48,15 @@ If friction got logged + triaged and a verdict row appeared — the mesh works.
 
 - Write your project's Definition-of-Done (PLAYBOOK §6) — this also arms the
   sentinel's exit condition.
-- Run the sentinel continuously (background) + re-arm on a timer if your
-  harness supports scheduling.
+- Keep the sentinel alive with your harness's scheduler if it has one (e.g. a
+  cron-style automation that re-arms the sentinel when it finishes and stops
+  itself when the DoD is met). The pattern: `read STATE.md first → if DoD met,
+  stop → else if no sentinel running, spawn one → triage any pending reports`.
 - After your first big wave, run `tools/token_report.py` for the economics
   table, and a friction-audit pass over your agent logs to baseline your
   shell-trap counts.
+- For a complex domain, add a `MAP.md` (one-file atlas: paths, vocabulary,
+  mechanisms, milestones, do-not-trust list) — see PROTOCOL §2.
 
 ## Uninstall
 
