@@ -179,5 +179,8 @@ The CMD reference set — each rule earned by repeated, counted failures:
     the else-branch and the remaining checks silently never run.
 11. `Get-Process` has no CommandLine property (use CIM); redirect-handle glue
     (`0>`/`1>`) eats digits in echo lines.
+12. `node --test <dir>` (directory positional) fails on Node 26/Windows — the
+    runner treats the directory as a module entry; use bare `node --test`
+    (recursive discovery) or explicit file paths.
 
 Port this list to your shell; keep the counts.
